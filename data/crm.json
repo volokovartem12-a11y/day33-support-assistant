@@ -1,0 +1,32 @@
+{
+  "_note": "Тестовые данные: все люди и почты вымышлены. Реальная CRM подключается заменой этого файла или MCP-сервера.",
+  "users": [
+    {"id": "U-17", "name": "Анна", "email": "anna.petrova@example.com", "plan": "Pro",
+     "status": "заблокирован", "locked_until": "2026-10-14T15:30:00+03:00", "failed_logins": 5,
+     "device": "Android 14, приложение 3.2.1", "password_hash": "$2b$12$FAKEHASHFAKEHASHFAKEHASHxxxxxxxxxxxxxxxxxxxxxxxx"},
+    {"id": "U-42", "name": "Дмитрий", "email": "dmitry.sokolov@example.org", "plan": "Basic",
+     "status": "активен", "locked_until": null, "failed_logins": 0,
+     "device": "iOS 18, приложение 3.2.1", "password_hash": "$2b$12$OTHERUSERHASHOTHERUSERHASHyyyyyyyyyyyyyyyyyyyyyyyy"},
+    {"id": "U-58", "name": "Ольга", "email": "olga.ivanova@example.net", "plan": "Pro",
+     "status": "активен", "locked_until": null, "failed_logins": 0,
+     "device": "Web, Chrome 130", "password_hash": "$2b$12$THIRDHASHTHIRDHASHTHIRDHASHzzzzzzzzzzzzzzzzzzzzzzzzz"}
+  ],
+  "tickets": [
+    {"id": "T-1001", "user_id": "U-17", "subject": "Не работает авторизация", "status": "open",
+     "product": "Пульт 3.2", "created": "2026-10-14T13:05:00+03:00",
+     "description": "Уже час не могу войти: код из SMS не приходит, потом пишет что аккаунт заблокирован.",
+     "log": ["13:02 2fa: SMS отправлено", "13:04 login: failed (invalid_otp)",
+             "13:04 login: failed (invalid_otp)", "13:05 login: failed (account_locked_until 15:30)"]},
+    {"id": "T-1002", "user_id": "U-42", "subject": "Не приходит письмо для сброса пароля", "status": "open",
+     "product": "Пульт 3.2", "created": "2026-10-14T10:20:00+03:00",
+     "description": "Нажимаю «Забыли пароль», письма нет ни во входящих, ни в спаме.",
+     "log": ["10:19 reset: письмо отправлено на dmitry.sokolov@example.org", "10:19 mail: delivered"]},
+    {"id": "T-1003", "user_id": "U-58", "subject": "Двойное списание за подписку", "status": "open",
+     "product": "Пульт 3.2", "created": "2026-10-13T18:40:00+03:00",
+     "description": "В выписке два списания за октябрь.",
+     "log": ["2026-10-01 billing: charge 990 RUB", "2026-10-01 billing: charge 990 RUB (retry)"]},
+    {"id": "T-1004", "user_id": "U-42", "subject": "Вопрос про тариф", "status": "closed",
+     "product": "Пульт 3.1", "created": "2026-09-30T09:00:00+03:00",
+     "description": "Чем отличается Basic от Pro?", "log": ["2026-09-30 support: answered"]}
+  ]
+}
